@@ -2,26 +2,29 @@
   "Users": {
     "System": {
       "vmimport": {
-        "PermissionBoundary": {
-          "ec2s3": {
-            "path": "/system/",
-            "policydoc": {
-              "Version": "2012-10-17",
-              "Statement": [
-                {
-                  "Effect": "Allow",
-                  "Action": [
-                    "s3:*",
-                    "cloudwatch:*",
-                    "ec2:*"
-                  ],
-                  "Resource": "*"
-                }
-              ]
-            },
-            "description": "for creating amis from ova images in s3 bucket"
-          }
-        }
+        "PermissionsBoundary": "ec2s3"
+      }
+    }
+  },
+  "Policies": {
+    "PermissionsBoundary": {
+      "ec2s3": {
+        "path": "/system/",
+        "policydoc": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "s3:*",
+                "cloudwatch:*",
+                "ec2:*"
+              ],
+              "Resource": "*"
+            }
+          ]
+        },
+        "description": "for creating amis from ova images in s3 bucket."
       }
     }
   }
