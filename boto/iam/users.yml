@@ -1,0 +1,28 @@
+users:
+  system:
+    vmimport:
+      permission_boundary:
+        - ec2
+        - s3
+
+policies:
+  permission_boundary:
+    ec2s3:
+      path: '/system'
+      policydoc:
+        version: "2018-07-22"
+        statement: 
+          
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*",
+                "cloudwatch:*",
+                "ec2:*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+      description: 
